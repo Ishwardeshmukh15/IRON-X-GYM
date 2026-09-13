@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book your free IronX Gym training session.">
+  <title>Book a Session | IronX Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="footer.css">
+  <style>
+    .booking-page{min-height:100vh;background:radial-gradient(circle at 85% 20%,rgba(242,108,67,.2),transparent 30%),var(--ink)}
+    .booking-wrap{max-width:1320px;margin:auto;padding:70px 40px 110px;display:grid;grid-template-columns:.85fr 1.15fr;gap:12%;align-items:center}
+    .booking-back{display:inline-block;margin-bottom:35px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.1em;text-decoration:none;text-transform:uppercase}
+    .booking-back:hover{color:var(--lime)}
+    .booking-title{font-size:clamp(85px,11vw,160px);line-height:.8;letter-spacing:-.05em;margin:0 0 30px;font-family:var(--display);text-transform:uppercase}
+    .booking-title i{color:var(--lime);font-style:normal}
+    .booking-lead{max-width:360px;color:var(--muted);font-size:16px}
+    .booking-card{background:#252820;padding:40px;position:relative}
+    .booking-card:before{content:"FREE FIRST SESSION";position:absolute;top:0;right:0;background:var(--lime);color:var(--ink);padding:10px 15px;font-size:10px;font-weight:700;letter-spacing:.1em}
+    .booking-card h2{font-size:44px;line-height:.9;margin:0 0 30px}
+    .booking-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .booking-form label{display:grid;gap:8px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .booking-form input,.booking-form select{width:100%;padding:14px 0;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;color:var(--paper);font:15px var(--body);outline:0}
+    .booking-form input:focus,.booking-form select:focus{border-color:var(--lime)}
+    .booking-form select option{background:var(--ink)}
+    .booking-form .button{grid-column:1/-1;margin-top:8px;justify-content:center}
+    .booking-note{grid-column:1/-1;color:var(--muted);font-size:11px;margin:0}
+    .booking-success{display:none;grid-column:1/-1;color:var(--lime);font-size:18px;font-weight:700}
+    .booking-success.is-visible{display:block}
+    .booking-form.is-complete>*:not(.booking-success){display:none}
+    @media(max-width:800px){.booking-wrap{display:block;padding:45px 22px 80px}.booking-card{margin-top:60px;padding:28px 22px}.booking-card:before{font-size:9px}.booking-card h2{font-size:40px}.booking-title{font-size:92px}.booking-form{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="booking-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="IronX Gym home"><span>IRON</span><b>X</b></a>
+    <a class="nav-cta" href="index.html">Back to home <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="booking-wrap">
+    <section aria-labelledby="booking-title">
+      <a class="booking-back" href="index.html">← Return to IronX</a>
+      <p class="eyebrow"><span class="eyebrow-line"></span> First session on us</p>
+      <h1 class="booking-title" id="booking-title">LET'S<br><i>MOVE.</i></h1>
+      <p class="booking-lead">Tell us a little about yourself and we’ll match you with the right session and coach. No pressure. Just a strong first step.</p>
+    </section>
+    <section class="booking-card" aria-labelledby="form-title">
+      <h2 id="form-title">BOOK YOUR<br><i>SESSION</i></h2>
+      <form class="booking-form" id="booking-form">
+        <label for="booking-name">Full name<input id="booking-name" name="name" type="text" placeholder="Alex Morgan" required></label>
+        <label for="booking-age">Age<input id="booking-age" name="age" type="number" min="13" max="100" placeholder="25" required></label>
+        <label for="booking-location">Location<input id="booking-location" name="location" type="text" placeholder="Your city" required></label>
+        <label for="booking-email">Email address<input id="booking-email" name="email" type="email" placeholder="you@email.com" required></label>
+        <label for="booking-phone">Phone number<input id="booking-phone" name="phone" type="tel" placeholder="+1 555 000 0000" required></label>
+        <label for="booking-height">Height (cm)<input id="booking-height" name="height" type="number" min="50" max="250" placeholder="175" required></label>
+        <label for="booking-weight">Weight (kg)<input id="booking-weight" name="weight" type="number" min="20" max="400" placeholder="75" required></label>
+        <label for="booking-body-type">Body type<select id="booking-body-type" name="body_type" required><option value="" disabled selected>Choose one</option><option>Slim</option><option>Average / Normal</option><option>Athletic</option><option>Higher body fat</option><option>Prefer not to say</option></select></label>
+        <button class="button button-primary" type="submit">Request my free session <span>↗</span></button>
+        <p class="booking-note">We’ll reply within one business day. No spam, ever.</p>
+        <p class="booking-success" role="status">You’re on the list. We’ll be in touch soon.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="full-footer"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="index.html"><span>IRON</span><b>X</b></a><p>Build your strength. Own your journey.</p></div><div class="footer-column"><h2>Our services</h2><ul><li>Strength & Fitness Training</li><li>Personal Training</li><li>Protein & Supplements</li><li>Gym Wear & Equipment</li></ul></div><div class="footer-column"><h2>Contact</h2><ul><li>📍 Your Gym Address</li><li>📞 +91 XXXXX XXXXX</li><li><a href="mailto:hello@ironxgym.com">✉️ hello@ironxgym.com</a></li><li><a href="index.html">Instagram ↗</a></li></ul></div><div class="footer-column"><h2>Opening hours</h2><ul><li><strong>Mon - Sat:</strong> 5:30 AM - 10:00 PM</li><li><strong>Sunday:</strong> 7:00 AM - 1:00 PM</li></ul></div></div><div class="footer-bottom"><span>© 2026 IRON X Gym. All rights reserved.</span><div class="footer-legal"><a href="index.html">Privacy Policy</a><a href="index.html">Terms & Conditions</a><a href="index.html">Refund Policy</a></div></div></footer>
+  <script>
+    document.querySelector('#booking-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const button = form.querySelector('button');
+      const success = document.querySelector('.booking-success');
+      button.disabled = true;
+      success.textContent = 'Sending your request...';
+      success.classList.add('is-visible');
+      try {
+        const response = await fetch('/api/booking', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || 'Something went wrong.');
+        form.classList.add('is-complete');
+        success.textContent = result.message;
+      } catch (error) {
+        success.textContent = error.message;
+        success.classList.remove('is-visible');
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
