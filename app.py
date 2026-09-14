@@ -78,6 +78,9 @@ class IronXRequestHandler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
 
+handler = IronXRequestHandler
+
+
 def timestamp():
     return datetime.now(timezone.utc).isoformat()
 
