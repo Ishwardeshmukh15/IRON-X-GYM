@@ -2,3 +2,7 @@ leads.json
 __pycache__/
 .env
 .venv/
+.playwright/
+playwright-report/
+test-results/
+node_modules/
